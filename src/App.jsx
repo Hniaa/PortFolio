@@ -86,25 +86,52 @@ function App() {
             <button className="back-btn" onClick={retourMenu}>← Retour</button>
             <h2 className="menu-title">À Propos</h2>
             <div className="pixel-text">
-              <p>Bonjour ! Je suis Hniaa, un développeur passionné par le style rétro et le Pixel Art.</p>
+              <h3>écrire des choses qui me concernent I guess</h3>
               <br/>
-              <p>J'aime créer des expériences web interactives qui rappellent les jeux vidéo de notre enfance.</p>
-              <br/>
-              <p>COMPÉTENCES : React, CSS, JavaScript, Design.</p>
             </div>
           </div>
         );
 
-      case 'contact':
+case 'contact':
         return (
           <div className="pixel-card fade-in">
             <button className="back-btn" onClick={retourMenu}>← Retour</button>
             <h2 className="menu-title">Contact</h2>
-            <form onSubmit={(e) => e.preventDefault()} style={{marginTop: '20px'}}>
-              <input type="text" placeholder="Votre Nom" className="pixel-input" />
-              <input type="email" placeholder="Votre Email" className="pixel-input" />
-              <textarea placeholder="Votre Message..." rows="5" className="pixel-textarea"></textarea>
-              <button className="pixel-btn">ENVOYER ✉</button>
+            
+            {/* 1. On pointe vers FormSubmit avec votre email */}
+            {/* REMPLACEZ L'ADRESSE EMAIL CI-DESSOUS PAR LA VÔTRE */}
+            <form action="https://formsubmit.co/haniadekimeche@gmail.com" method="POST" style={{marginTop: '20px'}}>
+              
+              {/* Configuration optionnelle pour éviter les captchas ou rediriger */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="Nouveau message de mon Portfolio !" />
+
+              {/* 2. On ajoute 'name' et 'required' à chaque champ */}
+              <input 
+                type="text" 
+                name="nom" 
+                placeholder="Votre Nom" 
+                className="pixel-input" 
+                required 
+              />
+              
+              <input 
+                type="email" 
+                name="email" 
+                placeholder="Votre Email" 
+                className="pixel-input" 
+                required 
+              />
+              
+              <textarea 
+                name="message" 
+                placeholder="Votre Message..." 
+                rows="5" 
+                className="pixel-textarea" 
+                required
+              ></textarea>
+              
+              <button type="submit" className="pixel-btn">ENVOYER ✉</button>
             </form>
           </div>
         );
