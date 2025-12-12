@@ -1,73 +1,330 @@
-/* 1. Le fond global (Toujours ton dégradé) */
+/* ==========================================================================
+   1. LES TRUCS À IMPORTER
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+/* ==========================================
+   2. LES PARAMÈTRES POUR LE FOND DU SITE
+   ========================================== */
+
+/* Variables des images et couleurs */
+:root {
+  /* MODE JOUR */
+  --image-pc: url('/fond_portfolio_pc_.JPG');
+  --image-tel: url('/fond_portfolio_tel_.JPG');
+}
+
+/* MODE NUIT */
+.mode-nuit {
+  --image-pc: url('/fond_portfolio_pc_nuit.jpg');
+  --image-tel: url('/fond_portfolio_tel_nuit.jpg');
+}
+
+/* Le Body (Fond d'écran et Police) */
 body {
   margin: 0;
   min-height: 100vh;
-  /* Un fond un peu plus "New Super Mario Bros" (Bleu ciel simple) */
-background: linear-gradient(-45deg, #A2D2FF, #CDB4DB, #FFC8DD, #FFAFCC);  font-family: sans-serif;
-  overflow: hidden;
+  background-image: var(--image-pc);
+  background-size: 100% 100%; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background-image 0.5s ease-in-out;
+  font-family: 'Press Start 2P', cursive; /* Police Pixel */
+  color: var(--couleur-texte);
 }
 
-/* 2. La grille */
-.niveau-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding-top: 15vh;
-  flex-wrap: wrap;
+/* Version Mobile */
+@media (max-width: 768px) {
+  body {
+    background-image: var(--image-tel);
+    background-position: center top;
+  }
 }
 
-/* 3. Le style des rectangles */
-.bloc-niveau {
-  width: 600px;
-  height: 450px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 4px solid #333; /* Bordure noire style BD/DS */
-  border-radius: 8px;
+/* La structure de centrage (Grid) */
+.app-container {
+  display: grid; 
+  place-items: center; 
+  height: 100vh; 
+  width: 100vw; 
+  overflow: hidden; 
+  position: relative;
+}
+
+/* Animations de transition (Fade In / Fade Out) */
+.fade-out {
+  animation: disparition 0.5s forwards ease-out;
+}
+@keyframes disparition {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.5); pointer-events: none; }
+}
+
+.fade-in {
+  animation: apparition 0.8s forwards ease-out;
+}
+@keyframes apparition {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================================================
+   3. LA PREMIÈRE PAGE (Avec le bouton "commencer le jeu")
+   ========================================================================== */
+.start-screen {
+  text-align: center;
+  z-index: 10;
+  animation: fadeIn 1s ease-in;
+}
+
+.pixel-title {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 4px 4px 0px #333, -2px -2px 0 #333;
+  margin-bottom: 50px;
+  line-height: 1.5;
+}
+
+.start-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  background-color: #C7CEFF; /* bouton "commencer le jeu" */
+  color: #333;
+  border: 4px solid #e1e4ff; /* contour du bouton "commencer le jeu" */
+  box-shadow: 0 8px 0 #a3a8d2, 0 15px 20px rgba(0,0,0,0.4); /* ombre du bouton "commencer le jeu" */
   cursor: pointer;
+  transition: all 0.1s;
+  text-transform: uppercase;
+  position: relative;
+  border-radius: 5px;
+}
+
+.start-btn:hover {
+  background-color: #b9c1ff; /* bouton "commencer le jeu" quand on passe la souris */
+  transform: translateY(-2px);
+}
+
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+
+/* ==========================================
+   4. LE BOUTON MODE CLAIR / SOMBRE
+   ========================================== */
+
+.btn-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  
+  /* Style Pixel Art */
+  background: transparent;
+  border: 4px solid #333;
+  box-shadow: 4px 4px 0px #333;
+  
+  border-radius: 5px;
+  padding: 10px 15px;
+  min-width: 140px;
+  
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  line-height: 1.5;
+  
+  cursor: pointer;
+  transition: all 0.1s;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+}
+
+.btn-toggle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #333;
+}
+.btn-toggle:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #333;
+}
+
+
+/* ==========================================================================
+   5. LA PAGE D'ACCUEIL (Avc le menu "Sélectionnez un mode de jeu")
+   ========================================================================== */
+
+
+/* La Boîte blanche style RPG */
+.pixel-card {
+  background: #F2F2F5;
+  border: 4px solid #333;
+  padding: 40px;
   text-align: center;
-  box-shadow: 5px 5px 0px #000; /* Ombre "dur" style rétro */
-  transition: transform 0.2s, background 0.2s;
-  padding: 10px;
-  position: relative; /* Important pour le texte */
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+  max-width: 700px;
+  width: 90%;
+  position: relative;
 }
 
-/* Au survol (HOVER) */
-.bloc-niveau:hover {
-  transform: translateY(-5px);
-  background: #fff;
-  border-color: #e67e22; /* Orange Mario */
-  box-shadow: 5px 5px 0px #d35400;
-}
-
-/* 4. La magie du texte qui change */
-/* Par défaut, on cache le texte "Commencer" */
-.texte-survol {
-  display: none;
-  font-weight: 900; /* Très gras */
-  color: #ff5454;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-}
-
-.texte-defaut {
-  font-weight: bold;
+/* Titre dans la carte */
+.menu-title {
   font-size: 1.5rem;
   color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom: 4px solid #333;
+  display: inline-block;
+  padding-bottom: 10px;
 }
 
-/* Quand on survole le bloc, on inverse l'affichage */
-.bloc-niveau:hover .texte-defaut {
-  display: none;
-}
-.bloc-niveau:hover .texte-survol {
-  display: block; /* Le texte "Commencer" apparaît */
+/* Grille des boutons */
+.pixel-buttons-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
-/* 5. L'ÉCRAN NOIR (Transition) */
-.ecran-noir {
+/* Les boutons du menu */
+.pixel-btn {
+  background: #d5e2ff;
+  border: 4px solid #333;
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  margin-top: 20px;
+  
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #333;
+  cursor: pointer;
+  text-transform: uppercase;
+  
+  box-shadow: 6px 6px 0px #000000;
+  transition: all 0.1s;
+  text-align: left;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pixel-btn:hover {
+  background-color: #C7CEFF;
+  box-shadow: 4px 4px 0px #333;
+  transform: translate(-2px, -2px);
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #333;
+}
+
+/* Bouton Quitter */
+.quit-btn {
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 300px;
+  border: 4px solid #333;
+  background-color: #e3e7ff;
+  box-shadow: 4px 4px 0px #333;
+  transform: translate(-2px, -2px);
+  margin-top: 30px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+.quit-btn:hover { text-decoration: underline; }
+
+
+/* ==========================================================================
+   6. LES PAGES INTERNES (Projets, À Propos, Contact)
+   ========================================================================== */
+
+/* Un bouton retour plus petit */
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #333;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  text-align: left;
+  display: block;
+}
+.back-btn:hover { text-decoration: underline; color: #555; }
+
+/* Styles pour le formulaire de contact */
+.pixel-input, .pixel-textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 4px solid #333;
+  font-family: 'Press Start 2P', cursive; /* On garde la police pixel */
+  font-size: 0.6rem; /* Police plus petite pour écrire confortablement */
+  box-shadow: inset 4px 4px 0px rgba(0,0,0,0.1); /* Ombre intérieure */
+  box-sizing: border-box; /* Pour ne pas dépasser la largeur */
+  resize: vertical; /* Pour le textarea */
+}
+
+.pixel-input:focus, .pixel-textarea:focus {
+  outline: none;
+  background-color: #eef2ff;
+}
+
+/* Grille pour les projets */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #fff;
+  border: 4px solid #333;
+  padding: 15px;
+  text-align: left;
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* Texte courant pour "À propos" */
+.pixel-text {
+  font-size: 0.7rem;
+  line-height: 1.8;
+  text-align: justify;
+  font-family: 'Courier New', Courier, monospace; /* Plus lisible pour les longs textes tout en restant rétro */
+  font-weight: bold;
+}
+
+
+
+
+/* ==========================================================================
+   7. ANIMATIONS DE TRANSITION (AJOUT)
+   ========================================================================== */
+
+/* L'écran noir qui recouvre tout */
+.black-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -75,64 +332,52 @@ background: linear-gradient(-45deg, #A2D2FF, #CDB4DB, #FFC8DD, #FFAFCC);  font-f
   height: 100vh;
   background-color: black;
   opacity: 0;
-  pointer-events: none; /* On peut cliquer à travers quand il est invisible */
-  transition: opacity 0.8s ease; /* Vitesse du fondu */
-  z-index: 9999; /* Tout devant */
+  pointer-events: none; /* Permet de cliquer à travers quand il est transparent */
+  z-index: 9999;
+  transition: opacity 0.8s ease-in-out;
 }
 
-/* Quand la transition est active, l'écran devient tout noir */
-.ecran-noir.actif {
+.black-overlay.active {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: all; /* Bloque les clics pendant la transition */
 }
 
-/* ... Tes styles précédents ... */
-
-/* La boîte de chargement (cachée par défaut) */
-.modal-chargement {
+/* La boîte de chargement style RPG */
+.loading-box {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Pour centrer parfaitement */
-  
-  background-color: white;
+  transform: translate(-50%, -50%);
+  background: #fff;
   border: 4px solid #333;
-  box-shadow: 10px 10px 0px rgba(0,0,0,0.5); /* Grosse ombre portée */
-  padding: 30px;
-  width: 300px;
+  padding: 20px 40px;
   text-align: center;
-  z-index: 5000; /* Devant les niveaux, mais derrière l'écran noir */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #333;
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+  z-index: 10000; /* Au-dessus de tout */
   
-  /* On la cache par défaut */
+  /* Pour l'apparition/disparition */
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
 }
 
-/* Quand elle est active, on l'affiche */
-.modal-chargement.visible {
+.loading-box.visible {
   opacity: 1;
   visibility: visible;
 }
 
-/* Le texte à l'intérieur */
-.modal-chargement h2 {
-  margin: 0;
-  color: #333;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+/* Petite animation des points de suspension (...) */
+.dots::after {
+  content: '';
+  animation: dot-animation 1.5s infinite step-end;
 }
 
-/* Une petite animation de points de suspension (optionnel mais cool) */
-.loading-dots:after {
-  content: ' .';
-  animation: dots 1.5s steps(5, end) infinite;
+@keyframes dot-animation {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
 }
-@keyframes dots {
-  0%, 20% { content: ' .'; }
-  40% { content: ' ..'; }
-  60% { content: ' ...'; }
-  80%, 100% { content: ''; }
-}
-
