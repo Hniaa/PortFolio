@@ -1,6 +1,101 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
+// --- NOUVEAU COMPOSANT : SECTION CONTACT ---
+// On le définit en dehors de App pour respecter les règles de React
+function ContactSection({ retourMenu }) {
+  const [formStatus, setFormStatus] = useState(null); // null, "sending", "success", "error"
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus("sending");
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/haniadekimeche@gmail.com", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        setFormStatus("success");
+        e.target.reset();
+      } else {
+        setFormStatus("error");
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      setFormStatus("error");
+    }
+  };
+
+  return (
+    <div className="pixel-card fade-in">
+      <button className="back-btn" onClick={retourMenu}>← Retour</button>
+      <h2 className="menu-title">Contact</h2>
+
+      {formStatus === "success" ? (
+        <div style={{ textAlign: 'center', padding: '20px', color: '#0db249ff' }}>
+          <h3>Message envoyé !</h3>
+          <p>Merci de m'avoir contacté.</p>
+          <p>Je vous répondrai le plus vite possible !</p>
+          <button 
+            className="pixel-btn" 
+            onClick={() => setFormStatus(null)}
+            style={{marginTop: '15px'}}>
+            Envoyer un autre message
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Nouveau message de mon Portfolio !" />
+          <input type="hidden" name="_template" value="table" />
+
+          <input
+            type="text"
+            name="nom"
+            placeholder="Votre Nom"
+            className="pixel-input"
+            required
+            disabled={formStatus === "sending"}
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Votre Email"
+            className="pixel-input"
+            required
+            disabled={formStatus === "sending"}
+          />
+
+          <textarea
+            name="message"
+            placeholder="Votre Message..."
+            rows="5"
+            className="pixel-textarea"
+            required
+            disabled={formStatus === "sending"}
+          ></textarea>
+
+          {formStatus === "error" && (
+            <p style={{color: 'red', fontSize: '0.8rem', marginBottom:'10px'}}>
+              Oups, une erreur est survenue. Réessayez plus tard.
+            </p>
+          )}
+
+          <button type="submit" className="pixel-btn" disabled={formStatus === "sending"}>
+            {formStatus === "sending" ? "ENVOI EN COURS..." : "ENVOYER ✉"}
+          </button>
+        </form>
+      )}
+    </div>
+  );
+}
+
+// --- COMPOSANT PRINCIPAL ---
 function App() {
   const [estNuit, setEstNuit] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
@@ -8,8 +103,8 @@ function App() {
   const [currentView, setCurrentView] = useState('menu');
 
   // --- NOUVEAUX ÉTATS POUR L'ANIMATION ---
-  const [isLoading, setIsLoading] = useState(false);       // Affiche la boîte "Chargement"
-  const [isBlackScreen, setIsBlackScreen] = useState(false); // Affiche l'écran noir
+  const [isLoading, setIsLoading] = useState(false);       
+  const [isBlackScreen, setIsBlackScreen] = useState(false); 
 
   useEffect(() => {
     if (estNuit) {
@@ -29,33 +124,27 @@ function App() {
 
   // --- NOUVELLE FONCTION DE NAVIGATION AVEC ANIMATION ---
   const handleNavigation = (targetView) => {
-    // 1. On lance la boîte de chargement
     setIsLoading(true);
 
-    // 2. On attend 1.5 secondes (temps de "chargement fictif")
     setTimeout(() => {
-      setIsLoading(false);  // On cache la boîte de chargement
-      setIsBlackScreen(true); // On lance le fondu au noir
+      setIsLoading(false);  
+      setIsBlackScreen(true); 
 
-      // 3. Une fois l'écran noir affiché (après 0.5s de transition CSS)
       setTimeout(() => {
-        setCurrentView(targetView); // On change la page en "coulisse"
+        setCurrentView(targetView); 
         
-        // 4. On attend un petit peu et on retire l'écran noir
         setTimeout(() => {
           setIsBlackScreen(false);
         }, 500);
 
-      }, 800); // Temps pour que l'écran soit bien noir
+      }, 800); 
 
-    }, 1500); // Durée de l'affichage "Chargement..."
+    }, 1500); 
   };
 
-  // Fonction simplifiée pour le bouton retour (utilise la même animation)
   const retourMenu = () => handleNavigation('menu');
 
-
-  // --- LE CONTENU DES DIFFÉRENTES PAGES (Identique à ton code) ---
+  // --- LE CONTENU DES DIFFÉRENTES PAGES ---
   const renderContent = () => {
     switch(currentView) {
       case 'projets':
@@ -92,56 +181,15 @@ function App() {
           </div>
         );
 
-case 'contact':
-        return (
-          <div className="pixel-card fade-in">
-            <button className="back-btn" onClick={retourMenu}>← Retour</button>
-            <h2 className="menu-title">Contact</h2>
-            
-            {/* 1. On pointe vers FormSubmit avec votre email */}
-            {/* REMPLACEZ L'ADRESSE EMAIL CI-DESSOUS PAR LA VÔTRE */}
-            <form action="https://formsubmit.co/haniadekimeche@gmail.com" method="POST" style={{marginTop: '20px'}}>
-              
-              {/* Configuration optionnelle pour éviter les captchas ou rediriger */}
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="Nouveau message de mon Portfolio !" />
-
-              {/* 2. On ajoute 'name' et 'required' à chaque champ */}
-              <input 
-                type="text" 
-                name="nom" 
-                placeholder="Votre Nom" 
-                className="pixel-input" 
-                required 
-              />
-              
-              <input 
-                type="email" 
-                name="email" 
-                placeholder="Votre Email" 
-                className="pixel-input" 
-                required 
-              />
-              
-              <textarea 
-                name="message" 
-                placeholder="Votre Message..." 
-                rows="5" 
-                className="pixel-textarea" 
-                required
-              ></textarea>
-              
-              <button type="submit" className="pixel-btn">ENVOYER ✉</button>
-            </form>
-          </div>
-        );
+      case 'contact':
+        // C'est ici qu'on appelle notre nouveau composant créé plus haut
+        return <ContactSection retourMenu={retourMenu} />;
 
       default:
         return (
           <div className="pixel-card fade-in">
             <h2 className="menu-title">Sélectionnez un mode de jeu</h2>
             <div className="pixel-buttons-grid">
-              {/* Note: J'ai remplacé les onClick directs par handleNavigation */}
               <button className="pixel-btn" onClick={() => handleNavigation('projets')}>
                 <span>1. MES PROJETS</span>
                 <span>▶</span>
@@ -169,17 +217,14 @@ case 'contact':
   return (
     <div className="app-container">
       
-      {/* 1. ÉLÉMENTS D'ANIMATION (AJOUT) */}
-      {/* L'écran noir de transition */}
+      {/* 1. ÉLÉMENTS D'ANIMATION */}
       <div className={`black-overlay ${isBlackScreen ? 'active' : ''}`}></div>
       
-      {/* La boîte de chargement */}
       <div className={`loading-box ${isLoading ? 'visible' : ''}`}>
         <p>CHARGEMENT<span className="dots"></span></p>
       </div>
 
-
-      {/* 2. LE RESTE DE TON SITE (INCHANGÉ) */}
+      {/* 2. LE RESTE DU SITE */}
       <button 
         className="btn-toggle" 
         onClick={() => setEstNuit(!estNuit)}
