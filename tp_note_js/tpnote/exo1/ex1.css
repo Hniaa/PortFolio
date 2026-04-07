@@ -1,0 +1,53 @@
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    position: relative;
+    background: #fff;
+}
+
+caption h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+caption div {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+tbody th {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+tbody td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+tbody td div {
+    width: 30px;
+    height: 30px;
+    background: orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+tbody td div span {
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
+}
+
+.past {
+    background-color: #eee;
+    border: none;
+}

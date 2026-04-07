@@ -1,0 +1,9 @@
+        input {
+            padding: 5px;
+            width: 250px;
+            color: gray;
+        }
+
+        .actif {
+            color: black;
+        }

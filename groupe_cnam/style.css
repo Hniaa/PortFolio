@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+ 
+* {
+  font-family: 'Reddit Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.myclass{
+  background-color: #782567 !important;
+}
+
+.entete {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 200px;
+    background-image: linear-gradient(to left top, #480c3c, #5f1851, #782567, #91327f, #ab3f97, #c84994, #e1578f, #f6698b, #f88a77, #eeab78, #e0c88f, #d8e0b4);
+}
+
+.entete h1 {
+    font-weight: bold;
+}
+
+#citation {
+  color: rgb(145, 145, 145);
+}
+ 
+h2 {
+    margin-top: 15px;
+}
+img{
+
+  object-fit: cover;
+  height: 300px;
+  /* display: block; */
+  /* margin: auto; */
+
+  /* margin-top: 10px; */
+  
+}
+ 
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #782567;
+  color: #fff;
+  text-align: center;
+}
+ 
+footer p {
+    color: white;
+}

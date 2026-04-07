@@ -1,0 +1,22 @@
+body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .prairie {
+            width: 100vw;
+            height: 100vh;
+            background-image: url('prairie.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: url('filet.png'), auto;
+        }
+
+        .papillon {
+            width: 100px;
+            position: absolute;
+            top: 100px;
+            left: 150px;
+            transition: top 0.3s, left 0.3s;
+        }

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>CV Hania DEKIMECHE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Rendre la page responsive sur mobile -->
+    <link rel="stylesheet" href="cv-hania.css"> <!-- Lien vers la feuille de style CSS externe -->
+</head>
+
+<body>
+    
+    <!-- HEADER -->
+    <header> <!-- Zone d’en-tête du CV -->
+        <ul class="container"> <!-- Liste non ordonnée servant de grille pour organiser les infos -->
+            <li>
+                <h1>
+                    <span id="prenom">Hania</span> <!-- Élément span avec un id pour styliser le prénom -->
+                    <span id="nom">DEKIMECHE</span> <!-- Élément span avec un id pour styliser le nom -->
+                </h1>
+            </li>
+            <li>
+                <strong>Adresse :</strong> <!-- Met le texte en gras pour le libellé -->
+                93300, Aubervilliers
+            </li>
+            <li>
+                <strong>Téléphone :</strong>
+                06 12 34 56 78
+            </li>
+            <li>
+                <strong>Mail :</strong>
+                monmail@gmail.com
+            </li>
+        </ul>
+    </header>
+    
+    <main class="container"> <!-- Conteneur principal du CV -->
+        
+        <aside> <!-- Colonne latérale (informations secondaires) -->
+            
+            <img src="." alt="Photo du cv"> <!-- Image de profil du CV -->
+            
+            <article> <!-- Bloc de contenu pour une section distincte -->
+                <h2>Compétences</h2> 
+                <p>
+                    Conception de sites web<br>
+                    Montage vidéo<br>
+                    Réalisation de Wireframes/Maquettes
+                </p> 
+            </article>
+            
+            <article>
+                <h2>Langues</h2>
+                <p>
+                    Français (maîtrisé)<br>
+                    Anglais (B2)<br>
+                    Arabe (langue maternelle)
+                </p>
+            </article>
+            
+            <article>
+                <h2>Centre d'intérêts</h2>
+                <p class="noBorder"> <!-- Classe spécifique pour supprimer la bordure -->
+                    Jeux vidéos<br>
+                    Football<br>
+                    Dessin<br>
+                    Informatique
+                </p>
+            </article>
+            
+        </aside>
+        
+        <section> <!-- Zone principale des informations du CV -->
+            <div class="container"> <!-- Conteneur pour centrer et structurer le contenu -->
+                <article>
+                    <h2>Présentation</h2>
+                    <p>Passionnée par l'informatique et les jeux vidéos, j'ai développé des compétences techniques en développement
+                         web avec HTML, CSS, PHP, et JavaScript, ainsi que sur des outils de design comme Figma et Illustrator. 
+                         Curieuse et dotée d'un bon esprit logique, j'aime le travail en équipe et je m'adapte facilement à de nouveaux défis.</p>
+                </article>
+                
+                <article>
+                    <h2>Formations et diplomes</h2>
+                    <ul>
+                        <li class="exp"> <!-- Élément de liste avec une classe pour mise en page spécifique -->
+                            <span class="periode">2025 - 2026</span>
+                            <span class="desc">Double Licence Bachelor Informatique - spécialité Intégration Web, au CNAM</span>
+                        </li>
+                        <li class="exp">
+                            <span class="periode">2023 - 2025</span>
+                            <span class="desc">BUT MMI première année, à l'IUT de Bobigny</span>
+                        </li>
+                        <li class="exp">
+                            <span class="periode">2022 - 2023</span>
+                            <span class="desc">Terminale STMG - spécialité Mercatique, au Lycée Charles de Foucault</span>
+                        </li>
+                        <li class="exp">
+                            <span class="periode">2021 - 2022</span>
+                            <span class="desc">Première Générale - spécialité Mathématiques, Physique-Chimie et Arts-Plastiques, au Lycée Charles de Foucault</span>
+                        </li>
+                        <li class="exp">
+                            <span class="periode">2020 - 2021</span>
+                            <span class="desc">Première Générale - spécialité Mathématiques, SVT et NSI, au Lycée Charles de Foucault</span>
+                        </li>
+                    </ul>
+                </article>
+                
+                <article>
+                    <h2>Expérience</h2>
+                    <ul class="top10"> <!-- Classe ajoutant un espacement supérieur -->
+                        <li class="exp">
+                            <span class="periode">Décembre 2018</span>
+                            <span class="desc"><strong>Stage d'observation</strong><br>à G20, Franconville</span>
+                        </li>
+                            </br> <!-- Mauvaise utilisation de <br> en fermeture (erreur, mais tolérée) -->
+                            </br>
+                            </br>
+                            </br>
+                            </br>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer> <!-- Pied de page -->
+        <ul class="container"> <!-- Mise en page structurée avec une grille -->
+            <li></li> <!-- Élément vide pour équilibrer la grille -->
+            <li>
+                <img src="qr_code_linkedin.jpg" alt="QR CODE LinkedIn"> <!-- Image du QR code vers le profil LinkedIn -->
+                <p>Mon LinkedIn</p>
+            </li>
+        </ul>
+    </footer>
+    
+</body>
+
+</html>

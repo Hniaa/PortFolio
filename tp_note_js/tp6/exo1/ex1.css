@@ -1,0 +1,14 @@
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #chrono {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        button {
+            font-size: 18px;
+            margin: 10px;
+            padding: 8px 15px;
+        }

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>TP 4 - Description</title>
+	<link rel="stylesheet" href="projet.css" />
+</head>
+<body>
+	
+  <header>
+    <!-- Logo du site en SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img">
+        <title id="title">Logo avec un éclair</title>
+        <!-- Éclair -->
+        <polygon points="50,5 40,40 70,40 35,95 45,60 20,60" fill="yellow" stroke="orange" stroke-width="2" />
+    </svg>
+
+    <!-- Titre centré -->
+    <h1>Site de Projet - TP 4</h1>
+
+	<nav>
+        
+      <ul class="menu">
+        
+        <li><a href="index.html"><h5>Menu</h5></a></li>
+        
+        
+        <li>
+		      <p>TP 5</p>
+            <ul class="sub-menu">
+			        <li><a href="tp5.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tp5/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tp5/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tp5/exo3/ex3.html">Exercice 3</a></li>
+                <li><a href="tp5/exo4/ex4.html">Exercice 4</a></li>
+            </ul>
+        </li>
+
+        
+        <li>
+		      <p>TP 6</p>
+            <ul class="sub-menu">
+			        <li><a href="tp6.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tp6/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tp6/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tp6/exo3/ex3.html">Exercice 3</a></li>
+            </ul>
+        </li>
+
+        
+        <li>
+		      <p>TP Noté</p>
+            <ul class="sub-menu">
+			        <li><a href="tpnote.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tpnote/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tpnote/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tpnote/exo3/ex3.html">Exercice 3</a></li>
+            </ul>
+        </li>
+    
+      </ul> 
+  </nav>
+
+</header>
+    
+<br/>
+<br/>
+<div class="text-box1">
+    <h1>TP 4</h1>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Ici, on a travaillé sur la création dynamique d’un tableau HTML de 50 lignes par 50 colonnes. Chaque cellule 
+    de ce tableau possède une couleur de fond choisie aléatoirement parmi huit couleurs définies dans un objet JavaScript. 
+    Le HTML sert à poser une structure simple avec un titre, un conteneur vide pour accueillir le tableau généré et 
+    une liste destinée à afficher les fréquences d’apparition de chaque couleur. Le fichier CSS ne sert qu'à enlever les marges 
+    internes des cellules et leur donner une taille carrée uniforme. Le JavaScript utilise un objet colorMap qui stocke les associations nom-couleur en hexadécimal, et un script 
+    utilise des boucles pour générer les 2 500 cellules du tableau. À chaque rafraîchissement de la page, la couleur est choisie aléatoirement. 
+    Ensuite, le code compte combien de fois chaque couleur apparaît et affiche ce résultat sous forme de liste. Cet exercice m’a aidé à comprendre
+    comment créer du contenu avec JS directement dans la page. J’ai mieux compris comment utiliser le DOM et appliquer des styles via le code. 
+    Ce n’était pas trop dur, il fallait juste rester organisé.</p>
+</div>
+<br/>
+<iframe src="tp4/exo1/ex1.html" height="850" width="50"></iframe>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Dans cet exercice, j’ai travaillé sur l’ajout d’interactions via JavaScript. Le but était de rendre 
+    chaque case du tableau interactive, en ajoutant des boutons qui changent les couleurs des cases. Le HTML était toujours structuré 
+    proprement, et le CSS servait principalement à donner une apparence claire aux cellules : bordures, taille fixe, 
+    et couleurs de fond. En JavaScript, j’ai utilisé un gestionnaire d’événements pour écouter le clic sur chaque 
+    bouton et modifier la couleur. Cet exercice m’a fait comprendre 
+    comment appliquer un comportement similaire à plusieurs éléments. 
+    Le rendu était réussi, et même si le design n’était pas exceptionnel, l’interactivité fonctionnait parfaitement.</p>
+</div>
+<br/>
+<iframe src="tp4/exo2/ex2.html" height="600" width="50"></iframe>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Dans cet exercice, j’ai appris à manipuler la position d’un élément avec JavaScript en utilisant les propriétés 
+    left et top. Il fallait faire apparaître un carré de couleur à un endroit aléatoire au chargement, puis 
+    de le déplacer sous la souris à chaque clic. J’ai découvert comment récupérer les coordonnées de la souris avec event.clientX 
+    et event.clientY, et comment animer ce déplacement avec transition. La difficulté était assez faible, mais ça m’a aidé à 
+    comprendre comment faire interagir du code avec le comportement de l’utilisateur. Le résultat fonctionnait bien, même 
+    si le design restait vraiment hyper simple.</p>
+</div>
+<br/>
+<iframe src="tp4/exo3/ex3.html" height="600" width="50"></iframe>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Ici, j’ai bossé sur un petit jeu où un papillon devait fuir le curseur quand on le survole. J’ai utilisé JavaScript 
+    pour déplacer l’image du papillon à un endroit aléatoire dans la prairie, grâce aux propriétés top et left. C’était 
+    l’occasion de revoir comment gérer les événements (mouseenter) et calculer des positions avec les tailles d’éléments. 
+    La difficulté était moyenne, surtout pour bien gérer les limites de l’écran. Le résultat était marrant et fonctionnait bien. 
+    C’était un exercice sympa pour lier interactivité et animation.</p>
+</div>
+<br/>
+<br/>
+<iframe src="tp4/exo4/ex4.html" height="800" width="50"></iframe>
+<br/>
+<br/>
+<br/>
+
+
+<footer>
+    <p>&#169; R212, Hania DEKIMECHE, 2025. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

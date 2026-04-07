@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend:wght@100..900&display=swap');
+
+body {
+    min-height: 100vh;
+    font-family: "Lexend", Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    background-image: linear-gradient(to top, #ffc69e, #ffb6a9, #feabbb, #eaa5d0, #c7a5e0, #c3a5e1, #c0a4e1, #bca4e2, #dba3d5, #f0a5c5, #fbabb5, #feb4a7);
+}
+
+form {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.273);
+    padding: 20px;
+}
+
+#taskTitle {
+    font-size: 15px;
+    margin-top: 5px;
+    width: 15%;
+  height: 35px;
+  padding: 12px 20px;
+      box-sizing: border-box;
+  border: 2px solid #a087ca;
+  border-radius: 4px;
+}
+
+textarea{
+    margin-top: 5px;
+     width: 25%;
+  height: 75px;
+  padding: 12px 20px;
+      box-sizing: border-box;
+  border: 2px solid #a087ca;
+  border-radius: 4px;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+#description {
+    font-size: 25px;
+}
+
+button[type=submit] {
+    height: 50px;
+    width: 100%;
+    background-color: #a087ca;
+    color: white;
+    font-weight: bold;
+    padding: 14px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.537);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    background: #c8e6c9;
+}
