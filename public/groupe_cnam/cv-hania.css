@@ -1,0 +1,371 @@
+/**********************
+        RESET CSS
+**********************/
+
+/* Le bloc suivant supprime les marges, paddings, bordures et styles par défaut
+   de tous les éléments HTML pour uniformiser l’affichage entre les navigateurs */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0; /* Supprime toutes les marges par défaut */
+    padding: 0; /* Supprime tous les espacements internes */
+    border: 0; /* Supprime les bordures par défaut */
+    font-size: 100%; /* Réinitialise la taille du texte */
+    font: inherit; /* Hérite du style de police du parent */
+    vertical-align: baseline; /* Aligne le texte sur la ligne de base */
+}
+
+/* Force les nouveaux éléments HTML5 à s’afficher en bloc sur les anciens navigateurs */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block; /* Les rend visibles comme des blocs */
+}
+
+body {
+    line-height: 1; /* Définit l’interligne par défaut */
+    background: #fff; /* Couleur de fond blanche */
+}
+
+ol, ul {
+    list-style: none; /* Supprime les puces et numéros des listes */
+}
+
+blockquote, q {
+    quotes: none; /* Supprime les guillemets automatiques des citations */
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: ''; /* Supprime le contenu avant/après les citations */
+    content: none;
+}
+
+table {
+    border-collapse: collapse; /* Supprime les espaces entre les cellules */
+    border-spacing: 0; /* Aucun espacement entre les bordures */
+}
+
+
+/**********************
+   Variable et Class
+**********************/
+
+/* Définition de variables CSS globales pour réutiliser les mêmes couleurs */
+:root {
+    --grisC: #cacaca; /* Gris clair */
+    --gris7: #8a8a8a; /* Gris moyen */
+    --border: #aaa; /* Couleur des bordures */
+    --bleu: #fff6fc; /* Rose très clair (thème doux) */
+    --texte: #555; /* Gris foncé pour le texte */
+    --bgNoir: #111; /* Presque noir */
+}
+
+/* Classe générique pour centrer et limiter la largeur d’un bloc */
+.container {
+    width: 90%; /* Largeur maximale du conteneur */
+    max-width: 90%; /* Empêche le dépassement */
+    margin: 0 auto; /* Centre horizontalement */
+}
+
+/* Ajustement spécifique des conteneurs situés dans une section */
+section .container {
+    margin: 50px auto; /* Espace vertical autour du bloc */
+    width: 80%; /* Réduction de la largeur pour équilibrer le contenu */
+}
+
+/* Supprime les bordures des éléments ayant cette classe */
+.noBorder {
+    border: none !important; /* Force la suppression avec !important */
+}
+
+/* Ajoute un espacement supérieur */
+.top10 {
+    margin-top: 10px; /* Décale vers le bas de 10px */
+}
+
+
+/**********************
+           CV
+**********************/
+
+html {
+    background: var(--grisC); /* Fond général gris clair */
+    min-width: 100vw; /* Largeur minimale = largeur de la fenêtre */
+    min-height: 100vh; /* Hauteur minimale = hauteur de la fenêtre */
+    font-family: Arial; /* Police générale sans empattement */
+}
+
+body {
+    border: 1px solid var(--border); /* Bordure grise autour du CV */
+    background: #fff; /* Fond blanc à l’intérieur */
+    width: 90%; /* Largeur du CV */
+    max-width: 900px; /* Largeur maximale */
+    min-height: calc(90vh - 2px); /* Hauteur minimale dynamique */
+    margin: 5vh auto; /* Centre verticalement avec marges */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0px 5px 50px var(--gris7); /* Ombre douce pour effet de relief */
+}
+
+header {
+    background: #fff6fc; /* Fond rose clair du bandeau */
+    height: 150px; /* Hauteur fixe */
+    color: #fff; /* Couleur du texte (sera écrasée plus bas) */
+    border-bottom: 1px solid #cecece; /* Ligne séparatrice en bas */
+}
+
+header ul {
+    display: grid; /* Affichage en grille */
+    grid-template-columns: 2fr 2fr 1.5fr 1.5fr; /* 4 colonnes avec proportions */
+}
+
+header ul li {
+    height: 150px; /* Même hauteur que le header */
+    padding: 50px 0 0 15%; /* Espacement intérieur (haut et gauche) */
+    font-size: 15px; /* Taille du texte */
+    color: #1d1d1d; /* Couleur du texte */
+    line-height: 1.5; /* Espacement entre lignes */
+}
+
+header ul li strong {
+    display: block; /* Met le texte sur sa propre ligne */
+    text-transform: uppercase; /* Texte en majuscules */
+    color: #0e0e0e; /* Noir presque total */
+    font-size: 14px; /* Taille du texte des libellés */
+}
+
+header ul li:nth-child(2) {
+    padding-left: 20%; /* Décalage supplémentaire à gauche */
+}
+
+header ul li:nth-child(3) {
+    padding-left: 15%; /* Décalage différent pour équilibre visuel */
+}
+
+header ul li:first-child {
+    background: var(--bleu); /* Fond rose pâle pour le bloc du nom */
+    color: #000000; /* Texte en noir */
+    height: 110px; /* Hauteur réduite */
+    padding: 40px 16% 0 16%; /* Espacement interne */
+}
+
+header ul li #prenom, header ul li #nom {
+    display: block; /* Chaque nom sur une ligne */
+    font-size: 28px; /* Taille du texte du prénom */
+    line-height: 1.25; /* Espacement vertical */
+    text-transform: uppercase; /* Tout en majuscules */
+}
+
+header ul li #nom {
+    font-weight: bold; /* Met le nom en gras */
+    font-size: 30px; /* Légèrement plus grand */
+}
+
+main {
+    display: grid; /* Structure principale en grille */
+    grid-template-columns: 2fr 5fr; /* Colonne latérale + zone principale */
+}
+
+aside {
+    background: #fff6fc; /* Fond rose pâle */
+    min-height: calc(100vh - 150px); /* S’adapte à la hauteur restante du CV */
+    padding: 0 10%; /* Espacement horizontal interne */
+}
+
+aside img {
+    width: 80%; /* Image prend 80% de la largeur du bloc */
+    margin: 50px auto 50px; /* Centrée avec marges haut et bas */
+    display: block; /* Affichage en bloc pour centrer */
+    border-radius: 0%; /* Pas d’arrondi (carrée) */
+}
+
+aside h2, section article h2 {
+    font-size: 18px; /* Taille du titre */
+    font-weight: bold; /* En gras */
+    text-transform: uppercase; /* Majuscules */
+    margin-bottom: 20px; /* Espace sous le titre */
+}
+
+aside p {
+    margin-bottom: 30px; /* Espace après chaque paragraphe */
+    padding-bottom: 30px; /* Espace interne en bas */
+    border-bottom: 1px solid #cecece; /* Ligne séparatrice */
+    line-height: 1.4; /* Interligne légèrement élargi */
+}
+
+section article {
+    border-top: 1px solid #cecece; /* Ligne au-dessus des articles */
+    margin-bottom: 50px; /* Espacement entre articles */
+}
+
+section article h2 {
+    width: auto; /* Largeur adaptée au contenu */
+    background: #fff; /* Fond blanc */
+    border-right: 1px solid #cecece; /* Ligne à droite du titre */
+    position: relative; /* Nécessaire pour le positionnement vertical */
+    top: -10px; /* Légèrement remonté */
+    display: inline-block; /* S’ajuste à la largeur du texte */
+    padding-right: 10px; /* Petit espace à droite */
+}
+
+section article p {
+    color: var(--texte); /* Couleur grise pour le texte */
+    line-height: 1.2; /* Espacement entre lignes */
+}
+
+section article li.exp {
+    display: grid; /* Grille pour aligner les périodes et descriptions */
+    grid-template-columns: 105px auto; /* Colonne de gauche fixe, droite fluide */
+    margin-bottom: 20px; /* Espacement entre les expériences */
+}
+
+section article li span.periode {
+    border-right: 1px solid var(--border); /* Ligne séparant la période de la description */
+    font-weight: bold; /* Met la période en valeur */
+    display: flex; /* Utilisation de Flexbox */
+    flex-direction: column; /* Organisation verticale */
+    justify-content: center; /* Centrage vertical */
+}
+
+section article li.exp span.desc {
+    padding-left: 20px; /* Décale la description à droite */
+    line-height: 1.4; /* Espacement entre lignes */
+    color: var(--texte); /* Couleur de texte grise */
+}
+
+section article li.exp span.desc strong {
+    font-weight: bold; /* Met en évidence le titre (ex: Stage) */
+}
+
+footer {
+    background: #fff6fc; /* Même couleur que l’en-tête */
+    border-top: 1px solid #cecece; /* Ligne séparatrice en haut */
+    height: 180px; /* Hauteur du pied de page */
+}
+
+footer ul {
+    display: grid; /* Organisation en grille */
+    grid-template-columns: 2fr 5fr; /* Deux zones (gauche vide, droite contenu) */
+}
+
+footer ul li:first-child {
+    background: var(--bleu); /* Fond rose clair */
+    height: 50px; /* Bloc vide pour équilibre */
+}
+
+footer ul li:nth-child(2) img {
+    height: 140px; /* Taille fixe du QR code */
+    text-align-last: end; /* Aligne le contenu à droite (rare) */
+    top: 3px; /* Légère correction verticale */
+}
+
+footer ul li:nth-child(2) {
+    display: block; /* Organisation verticale du contenu */
+    text-align: center; /* Centre horizontalement l’image et le texte */
+    width: 100%; /* Prend toute la largeur disponible */
+    height: 35px; /* Hauteur minimale */
+    padding-top: 15px; /* Décale le contenu vers le bas */
+}
+
+footer ul li:nth-child(2) a {
+    color: #999; /* Couleur grise du lien */
+    text-decoration: none; /* Supprime le soulignement */
+    font-size: 12px; /* Petite taille du texte */
+}
+
+footer ul li:nth-child(2) a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+
+
+/**********************
+      MEDIA QUERY
+**********************/
+
+/* Adaptations pour les écrans moyens (tablettes, petits laptops) */
+@media (max-width: 1024px) {
+
+    header ul li #prenom, header ul li #nom {
+        font-size: 22px; /* Réduction de la taille du nom */
+    }
+    header ul li:first-child {
+        padding: 50px 16% 0 16%; /* Ajuste le centrage du nom */
+        text-align: center; /* Centre le texte */
+    }
+    header ul li {
+        font-size: 13px; /* Texte un peu plus petit */
+    }
+    header ul li strong {
+        font-size: 14px; /* Taille ajustée des libellés */
+    }
+}
+
+/* Adaptations pour les petits écrans (smartphones) */
+@media (max-width: 750px) {
+    
+    body {
+        width: 98%; /* Presque pleine largeur de l’écran */
+        margin: 1vh auto; /* Réduit les marges verticales */
+    }
+    .container {
+        width: 100%; /* Prend toute la largeur */
+        max-width: 100%; /* Supprime la contrainte max */
+    }
+    header {
+        height: auto; /* Hauteur flexible */
+    }
+    header ul {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+    header ul li:first-child {
+        height: auto;
+        padding: 20px 0; /* Réduction des marges */
+    }
+    header ul li:nth-child(2) {
+        padding-left: 0%; /* Supprime le décalage gauche */
+        padding-top: 30px; /* Espacement haut */
+    }
+    header ul li:nth-child(3) {
+        padding: 10px 0%; /* Réduit les marges */
+    }
+    header ul li:nth-child(4) {
+        padding-bottom: 30px; 
+        padding-left: 0%; /* Alignement centré */
+    }
+    header ul li {
+        height: auto; /* Ajustement automatique */
+        padding: 20px 0; /* Espacement vertical uniforme */
+        text-align: center; /* Centrage du texte */
+    }
+    aside {
+        text-align: center; /* Centre tout le contenu latéral */
+    }
+    aside img {
+        max-width: 300px; /* Limite la taille de la photo */
+    }
+    main {
+        grid-template-columns: 1fr; /* Supprime la grille, contenu en colonne unique */
+    }
+    section article, section article h2 {
+        border: none; /* Supprime les bordures sur petit écran */
+    }
+    section article li.exp {
+        grid-template-columns: 85px auto; /* Réduit la largeur de la colonne période */
+    }
+    section article li span.periode {
+        font-size: 12px; /* Texte plus petit */
+    }
+    footer ul {
+        grid-template-columns: 0fr 1fr; /* Masque la première colonne vide */
+    }
+}

@@ -1,0 +1,168 @@
+/*Je voulais une typographie moderne et lisible sans sérif donc j'ai décidé d'importer une police de Google Fonts 
+mais de rajouter quand même des polices que tout le monde a pour éviter des problèmes d'affichage*/
+
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+/*Je commence d'abord par réinitialiser le margin et le padding pour éliminer les styles par défaut de chaque navigateur
+et donc avoir un contrôle total et une certaine consistance visuelle lors de mon CSS*/
+
+*{
+	font-family: 'Reddit Sans', Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*J'ai utilisé le flexbox afin de centrer mon CV sur la page.
+Dans l'idéal, j'aurai préféré utiliser les rem au lieu des px car c'est meilleur pour l'accessibilité mais je ne maîtrise pas encore très bien cette unité
+donc je suis restée sur les px*/
+
+body {
+	display: flex;
+	justify-content: center;
+	background-color: #F0F8FF;
+	font-size: 16px;
+}
+
+/*Je n'aimais pas la couleur bleue mise par défaut sur les liens donc j'ai supprimé celle-ci*/
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/*Pareil pour les puces des listes à gauche pour les moyens de contact et les formations donc j'ai fait en sorte qu'on ne les voit pas*/
+
+.contact ul, .formations ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+/*J'ai pris les dimensions d'une feuille A4 et rajouté une ombre sur les contours du CV pour différencier du fond*/
+
+.cv-container {
+	display: flex;
+	width: 210mm;
+	min-height: 297mm;
+	margin: 40px auto;
+	margin-top: 0;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/*A gauche, j'ai mis une couleur plus sombre et une police blanche pour un contraste plus marqué pour l'accessibilité*/
+
+.colonne-gauche{
+	width: 30%;
+	background-color: #4b4b4b;
+	color: white;
+	padding: 30px;
+}
+
+.colonne-droite{
+	width: 70%;
+	background-color: #F0F8FF;
+	padding: 30px 40px;
+	text-align: justify;
+}
+
+/*Je trouve que rendre la photo ronde est le meilleur choix pour un CV car cela a un effet plus doux et plus esthétique. Ma photo étant rectangulaire,
+j'ai dû passer par object-fit : cover pour éviter la déformation et object-position : top pour éviter que le haut de ma tête soit coupée*/
+
+.photo-cv {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 50%;
+	object-position: top;
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+/*Ma priorité était de hiérarchiser les titres afin que du simple coup d'oeil sur le CV, les intitulés et leurs infos soient lisibles et reconnaissables.
+J'ai également essayé d'aérer le CV à l'aide des marges*/
+
+.colonne-gauche h2 {
+	border-bottom: 1px solid white;
+	padding-bottom: 5px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	font-size: 22px;
+}
+
+.formations h3 {
+	font-size: large;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.formations h4 {
+	font-size: medium;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+
+.formations p {
+	font-size: small;
+	font-weight: lighter;
+	margin-bottom: 5px;
+}
+
+.colonne-gauche ul li {
+	margin-top: 5px;
+}
+
+.colonne-droite header h1 {
+	font-size: 28px;
+	margin-bottom: 5px;
+}
+
+.colonne-droite header h2 {
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 30px;
+	font-weight: normal;
+}
+
+/*Comme vous me l'avez demandé, j'ai rajouté des traits pour séparer les sections*/
+
+.colonne-droite h2 {
+	font-size: 22px;
+	color: #2c3e50;
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	margin-top: 40px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+.colonne-droite p {
+	margin-bottom: 15px;
+}
+
+.experiences-pro h3 {
+	font-size: 18px;
+	margin-top: 40px;
+	margin-bottom: 2px;
+}
+
+.experiences-pro h4 {
+	font-size: 16px;
+	font-weight: normal;
+	color: #777777;
+	text-transform: uppercase;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+section {
+	margin-bottom: 30px;
+}
+
+/*LES DIFFICULTES RENCONTREES PENDANT LA CONCEPTION DU CV
+
+Ma principale difficulté a été de faire cohabiter les deux colonnes. La solution est passée par l'utilisation du display:flex sur le conteneur parent.
+
+Pour les formations, j'ai eu du mal à différencier visuellement les titres de diplôme, les établissement et les années. J'ai réglé ce problème en définissant
+une échelle de font-weight*/

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>TP Noté - Description</title>
+	<link rel="stylesheet" href="projet.css" />
+</head>
+<body>
+	
+  <header>
+    <!-- Logo du site en SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img">
+        <title id="title">Logo avec un éclair</title>
+        <!-- Éclair -->
+        <polygon points="50,5 40,40 70,40 35,95 45,60 20,60" fill="yellow" stroke="orange" stroke-width="2" />
+    </svg>
+
+    <!-- Titre centré -->
+    <h1>Site de Projet - TP Noté</h1>
+
+	<nav>
+        
+      <ul class="menu">
+        
+        <li><a href="index.html"><h5>Menu</h5></a></li>
+        
+        
+        <li>
+		      <p>TP 4</p>
+            <ul class="sub-menu">
+			        <li><a href="tp4.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tp4/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tp4/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tp4/exo3/ex3.html">Exercice 3</a></li>
+                <li><a href="tp4/exo4/ex4.html">Exercice 4</a></li>
+            </ul>
+        </li>
+        
+        
+        <li>
+		      <p>TP 5</p>
+            <ul class="sub-menu">
+			        <li><a href="tp5.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tp5/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tp5/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tp5/exo3/ex3.html">Exercice 3</a></li>
+                <li><a href="tp5/exo4/ex4.html">Exercice 4</a></li>
+            </ul>
+        </li>
+
+        
+        <li>
+		      <p>TP 6</p>
+            <ul class="sub-menu">
+			        <li><a href="tp6.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tp6/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tp6/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tp6/exo3/ex3.html">Exercice 3</a></li>
+                <li><a href="tp6/exo4/ex4.html">Exercice 4</a></li>
+            </ul>
+        </li>
+    
+      </ul> 
+  </nav>
+  
+</header>
+    
+
+<br/>
+<br/>
+<div class="text-box1">
+    <h1>TP Noté</h1>
+</div>
+<br/>
+<br/>
+<br/>
+<iframe src="tpnote/exo1/ex1.html" height="400" width="50"></iframe>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Cette partie de l'exercie sert à apprendre comment faire un tableau complexe en HTML avec l’utilisation de la balise caption pour le titre et la description, ce qui améliore l’accessibilité et la sémantique. J’ai appris à appliquer des styles CSS précis sur les différentes parties du tableau, comme les cellules d’en-tête th, les cellules normales td, et l’utilisation de `position: relative` pour mieux contrôler l’agencement des éléments internes. La création d’éléments visuels comme les cercles orange avec un chiffre centré à l’intérieur m’a permis de manipuler le modèle de boîte CSS, les flexbox et les propriétés comme `border-radius` pour arrondir les formes. Ce travail m’a semblé intéressant pour progresser dans la mise en page précise d’éléments graphiques dans un tableau, ce qui est souvent utile pour représenter des données musicales, techniques ou autres. Le niveau de difficulté était modéré : il faut bien comprendre le CSS pour obtenir un rendu propre et harmonieux. Le résultat est clair, fonctionnel et visuellement attrayant, avec une bonne hiérarchie visuelle, ce qui montre que le code est bien structuré et adapté à cet usage.
+</p>
+</div>
+<br/>
+<br/>
+<iframe src="tpnote/exo2/ex2.html" height="350" width="50"></iframe>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Ici, on génère du contenu HTML avec JavaScript à partir d’une structure de données JSON, qui est ici un objet représentant les accords de guitare. J’ai appris à manipuler le DOM pour créer un tableau complet avec ses éléments table, caption, body, et à y insérer des lignes et cellules en fonction des valeurs contenues dans l’objet. La gestion conditionnelle d’éléments (création ou non d’un div selon la valeur de la case) m’a aussi permis de mieux comprendre comment afficher uniquement ce qui est nécessaire. Le code fait un bon usage de la modularité avec une fonction `createAccord` réutilisable, ce qui est une bonne pratique en programmation. Le niveau de difficulté était un peu plus élevé que dans les exercices précédents car il faut bien comprendre les boucles imbriquées, la manipulation avancée du DOM, et la structure des données. Cet exercice est très instructif car il montre comment relier des données structurées à un affichage graphique, ce qui est fondamental maintenant. Le résultat obtenu est fidèle à la représentation des accords et le tableau est bien construit ce qui prouve que le code est efficace et bien pensé.
+</p>
+</div>
+<br/>
+<br/>
+<br/>
+<iframe src="tpnote/exo3/ex3.html" height="320" width="50"></iframe>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Cette dernière question m’a permis d’approfondir mes connaissances sur la manipulation dynamique du DOM en JavaScript, en intégrant à la fois la génération d’éléments HTML à partir de données structurées et la gestion du temps avec `setInterval` pour créer un effet de dictée musicale. J’ai appris à gérer un cycle d’affichage automatique et aléatoire d’accords, en alternant entre démarrage et arrêt via un bouton, ce qui implique une bonne compréhension des variables globales, des timers, et de la modification dynamique du contenu HTML. Le niveau de difficulté était plus élevé que les exercices et questions précédentes car il combine plusieurs notions : création d’éléments HTML, manipulation d’événements, gestion d’intervalles temporels, et interaction utilisateur. Cet exercice est également très utile pour mon apprentissage (je veux aller en dev web svp) , car il rapproche la programmation événementielle et la gestion d’état dans une interface web, compétences essentielles pour rendre les pages interactives et vivantes. Le rendu fonctionnel est fluide, le code est bien organisé et le mécanisme de dictée marche parfaitement, ce qui témoigne d’une bonne maîtrise des concepts utilisés.
+</p>
+</div>
+<br/>
+<br/>
+
+<footer>
+    <p>&#169; R212, Hania DEKIMECHE, 2025. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

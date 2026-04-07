@@ -1,0 +1,31 @@
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+
+        .even-row {
+            background-color: #D3E4F0;
+        }
+
+        .even-col {
+            background-color: #F0D3E4;
+        }
+
+        .checker {
+            background-color: #C0FFC0;
+        }
+
+        .white {
+            background-color: white;
+        }
+
+        button {
+            margin: 5px;
+        }

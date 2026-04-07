@@ -1,0 +1,424 @@
+/* feuille de style du header */
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #f0beff;
+	color: rgb(0, 0, 0);
+	padding: 20px 20px;
+
+}
+
+header svg {
+	width: 80px;
+	height: 80px;
+}
+
+header h1 {
+	flex-grow: 1;
+	text-align: center;
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+/* feuille de style du footer */
+
+footer {
+	text-align: center;
+	background-color: #f0beff;
+	color: rgb(0, 0, 0);
+	padding: 30px 0;
+}
+
+/* Modifs pour le menu */
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	box-sizing: border-box;
+	color: #1c2432;
+	text-align: center;
+}
+
+body {
+    background-image: url('fond_site.png');
+	background-size: cover;
+	background-position: center;
+	min-height: 600px;
+	
+}
+nav {
+	text-align: center;
+}
+.menu {
+	display: inline-block;
+}
+.menu > li {
+	margin: 1px;
+	float: left;
+	width: 140px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #fff675;
+	cursor: pointer;
+	font-size: 17px;
+	border-radius: 10px;
+}
+
+.sub-menu {
+	transform: scale(0);
+	transform-origin: top center;
+	transition: all 300ms ease-in-out;
+}
+.sub-menu li {
+	font-size: 14px;
+	background: rgb(0, 255, 242);
+	padding: 8px 0;
+	color: white;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 300ms ease-in-out;
+	border-radius: 10px;
+}
+.sub-menu li:last-child {
+    border-bottom: 0;
+}
+.sub-menu li:hover {
+    background: #fff675;
+}
+.menu > li:hover .sub-menu li {
+    transform: scale(1);
+}
+.menu > li:hover .sub-menu {
+    transform: scale(1);
+}
+
+h1{
+  display:inline-block;
+  text-align: center;
+}
+
+p{
+	font-weight: bold ;
+	font-size: large;
+}
+
+/* Pour que le texte soit centré dans un carré (ou un conteneur) et plus visible */
+
+.text-box1 {
+    display: flex; /* Pour centrer le texte */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    width: 450px; /* Largeur du carré */
+    height: 100px; /* Hauteur du carré */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc avec opacité */
+    color: black; /* Couleur du texte */
+    border: 2px solid #000; /* Optionnel : bordure */
+    border-radius: 10px; /* Optionnel : coins arrondis */
+    font-size: 18px; /* Taille de la police */
+    text-align: center; /* Alignement du texte */
+    margin: 0 auto; /* Centre le conteneur dans la page */
+}
+
+.text-box2 {
+    display: flex; /* Pour centrer le texte */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    width: 1000px; /* Largeur du carré */
+    height: 70px; /* Hauteur du carré */
+    background-color: rgba(192, 244, 255, 0.5); /* Fond blanc avec opacité */
+    color: black; /* Couleur du texte */
+    border: 2px solid #000; /* Optionnel : bordure */
+    border-radius: 10px; /* Optionnel : coins arrondis */
+    font-size: 18px; /* Taille de la police */
+    text-align: center; /* Alignement du texte */
+    margin: 0 auto; /* Centre le conteneur dans la page */
+}
+
+.text-box3 {
+    display: flex; /* Pour centrer le texte */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    width: 200px; /* Largeur du carré */
+    height: 80px; /* Hauteur du carré */
+    background-color: rgba(255, 194, 244, 0.3); /* Fond blanc avec opacité */
+    color: black; /* Couleur du texte */
+    border: 2px solid #000; /* Optionnel : bordure */
+    border-radius: 10px; /* Optionnel : coins arrondis */
+    font-size: 18px; /* Taille de la police */
+    text-align: center; /* Alignement du texte */
+    margin: 0 auto; /* Centre le conteneur dans la page */
+}
+
+/* Modifs pour le iframe */
+
+iframe {
+  border: 1px solid black;
+  width: 60%;
+  background: white;
+}
+
+/* modifs pour le bandeau publicitaire du TP7 */
+
+aside {
+  position: absolute; /* Permet de positionner l'élément par rapport à la fenêtre */
+  top: -5; /* Aligne le haut de l'élément avec le haut de la fenêtre */
+  right: 0; /* Aligne le côté droit de l'élément avec le côté droit de la fenêtre */
+  width: 25%; /* Largeur fixe, ajustable selon vos besoins */
+  height: 10%; /* Prend toute la hauteur de l'écran */
+  background-color: #fff0f7;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-y: auto; /* Permet le défilement si le contenu dépasse */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre pour le relief */
+}
+
+/* Infobulle pour la page du TP7 */
+
+a.info {
+	position: relative;
+	color: #ff7c25;
+	text-decoration: none;
+ }
+ a.info span {
+	display: none; /* On masque l'infobulle. */
+ }
+ a.info:hover {
+	background: none; /* Correction d'un bug d'Internet Explorer. */
+	z-index: 100; /* On définit une valeur pour l'ordre d'affichage. */
+ 
+	cursor: help; /* On change le curseur par défaut par un curseur d'aide. */
+ }
+ a.info:hover span {
+	display: inline; /* On affiche l'infobulle. */
+	position: absolute;
+ 
+	top: 30px; /* On positionne notre infobulle. */
+	left: 20px;
+ 
+	background: #ffa970;
+
+	width:300px;
+ 
+	color: #000000;
+	padding: 15px;
+ 
+	border: 1px solid yellow;
+	border-top: 1px solid yellow;
+	border-left : 1px solid yellow;
+ }
+
+ /*Infobulle pour la page CV */
+
+  a.oui {
+	 position: relative;
+	 color: blue;
+	 text-decoration: none;
+  }
+  a.oui span {
+	 display: none; /* On masque l'infobulle. */
+  }
+  a.oui:hover {
+	 background: none; /* Correction d'un bug d'Internet Explorer. */
+	 z-index: 100; /* On définit une valeur pour l'ordre d'affichage. */
+  
+	 cursor: help; /* On change le curseur par défaut par un curseur d'aide. */
+  }
+  a.oui:hover span {
+	 display: inline; /* On affiche l'infobulle. */
+	 position: absolute;
+  
+	 top: 00px; /* On positionne notre infobulle. */
+	 right: 20px;
+  
+	 background: #000000;
+  
+	 color: #000000;
+	 padding: 1px;
+  
+	 border: 1px solid black;
+	 border-top: 1px solid black;
+	 border-left : 1px solid black;
+  }
+
+/*Infobulle pour la page CV */
+
+ a.oui {
+	position: relative;
+	color: blue;
+	text-decoration: none;
+ }
+ a.oui span {
+	display: none; /* On masque l'infobulle. */
+ }
+ a.oui:hover {
+	background: none; /* Correction d'un bug d'Internet Explorer. */
+	z-index: 100; /* On définit une valeur pour l'ordre d'affichage. */
+ 
+	cursor: help; /* On change le curseur par défaut par un curseur d'aide. */
+ }
+ a.oui:hover span {
+	display: inline; /* On affiche l'infobulle. */
+	position: absolute;
+ 
+	top: 00px; /* On positionne notre infobulle. */
+	right: 20px;
+ 
+	background: #000000;
+ 
+	color: #000000;
+	padding: 1px;
+ 
+	border: 1px solid black;
+	border-top: 1px solid black;
+	border-left : 1px solid black;
+ }
+
+/*Infobulle pour la page CV 2*/
+
+a.BE {
+	position: relative;
+	color: rgb(255, 214, 80);
+	text-decoration: none;
+ }
+ a.BE span {
+	display: none; /* On masque l'infobulle. */
+ }
+ a.BE:hover {
+	background: none; /* Correction d'un bug d'Internet Explorer. */
+	z-index: 100; /* On définit une valeur pour l'ordre d'affichage. */
+ 
+	cursor: help; /* On change le curseur par défaut par un curseur d'aide. */
+ }
+ a.BE:hover span {
+	display: inline; /* On affiche l'infobulle. */
+	position: absolute;
+ 
+	top: -40px; /* On positionne notre infobulle. */
+	right: 20px;
+
+	background: #000000;
+ 
+	color: #000000;
+	padding: 1px;
+ 
+	border: 1px solid black;
+	border-top: 1px solid black;
+	border-left : 1px solid black;
+ }
+
+/*Infobulle pour la page CV 3*/
+
+a.OP {
+	position: relative;
+	color: rgb(255, 34, 34);
+	text-decoration: none;
+ }
+ a.OP span {
+	display: none; /* On masque l'infobulle. */
+ }
+ a.OP:hover {
+	background: none; /* Correction d'un bug d'Internet Explorer. */
+	z-index: 100; /* On définit une valeur pour l'ordre d'affichage. */
+ 
+	cursor: help; /* On change le curseur par défaut par un curseur d'aide. */
+ }
+ a.OP:hover span {
+	display: inline; /* On affiche l'infobulle. */
+	position: absolute;
+ 
+	top: -40px; /* On positionne notre infobulle. */
+	right: 20px;
+
+	background: #000000;
+ 
+	color: #000000;
+	padding: 1px;
+ 
+	border: 1px solid black;
+	border-top: 1px solid black;
+	border-left : 1px solid black;
+ }
+
+/*Infobulle pour la page CV 4*/
+a.DBZ {
+	position: relative;
+	color: rgb(255, 140, 0);
+	text-decoration: none;
+ }
+ a.DBZ span {
+	display: none; /* On masque l'infobulle. */
+ }
+ a.DBZ:hover {
+	background: none; /* Correction d'un bug d'Internet Explorer. */
+	z-index: 100; /* On définit une valeur pour l'ordre d'affichage. */
+ 
+	cursor: help; /* On change le curseur par défaut par un curseur d'aide. */
+ }
+ a.DBZ:hover span {
+	display: inline; /* On affiche l'infobulle. */
+	position: absolute;
+ 
+	top: -40px; /* On positionne notre infobulle. */
+	right: 20px;
+
+	background: #000000;
+ 
+	color: #000000;
+	padding: 1px;
+ 
+	border: 1px solid black;
+	border-top: 1px solid black;
+	border-left : 1px solid black;
+ }
+
+
+/*Trucs pour le CV */
+
+.Identite {
+	position:absolute;
+	left:15%;
+	top:15%;
+	background-color: #80c0ff;
+	display:inline-block;
+	border-radius:10px;
+	border-style:ridge;
+	border-color:black;
+}
+
+.SDF {
+	position:absolute;
+	left:5%;
+	top:40%;
+	background-color: #80c0ff;
+	display: inline-block;
+	border-radius:20px;
+	border-style:outset;
+	border-color:black;
+}
+
+.competences {
+	position:absolute;
+	left:70%;
+	top:17%;
+	background-color: #80c0ff;
+	display:inline-block;
+	border-radius:10px;
+	border-style:inset;
+	border-color:black;
+}
+
+.interets {
+	position:absolute;
+	left:60%;
+	top:60%;
+	background-color: #80c0ff ;
+	display:inline-block;
+	border-radius:10px;
+	border-style:groove;
+	border-color:black;
+}

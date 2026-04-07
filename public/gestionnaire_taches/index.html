@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionnaire de Tâches</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Gestionnaire de tâches</h1>
+    <form id="taskForm">
+        <label for="taskTitle" id="titre">Titre</label>
+        <input type="text" id="taskTitle" placeholder="Titre de la tâche" required>
+        <label for="taskDesc" id="description">Description</label>
+        <textarea id="taskDesc" placeholder="Décrire la tâche"></textarea>
+        <button type="submit" id="addButton">Ajouter une tâche</button>
+    </form>
+    <ul id="taskList"></ul>
+    <script src="script.js"></script>
+</body>
+
+</html>

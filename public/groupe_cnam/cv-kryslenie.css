@@ -1,0 +1,258 @@
+/* === RÉINITIALISATION GLOBALE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === STYLE DU BODY === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #2d3436;
+    line-height: 1.6;
+    padding: 30px 0;
+}
+
+/* === EN-TÊTE : Informations d'identification === */
+.header {
+    background-color: #2d3436;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+    font-size: 3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.4em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #74b9ff;
+}
+
+/* === CONTENEUR PRINCIPAL : Centrage et largeur === */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    display: flex;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    min-height: 85vh;
+}
+
+/* === COLONNE PRINCIPALE (gauche) : 65% === */
+.main-column {
+    flex: 0 0 65%;
+    padding: 45px 40px;
+    background-color: #ffffff;
+}
+
+/* === BARRE LATÉRALE (droite) : 35% === */
+.sidebar {
+    flex: 0 0 35%;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    padding: 45px 35px;
+    color: #ffffff;
+}
+
+/* === PHOTO DE PROFIL === */
+.profile-photo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.profile-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05);
+}
+
+/* === SECTIONS : Style général === */
+.section {
+    margin-bottom: 40px;
+}
+
+/* === TITRES DES SECTIONS (colonne principale) === */
+.main-column .section h2 {
+    font-size: 1.8em;
+    color: #667eea;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 4px solid #667eea;
+    font-weight: 600;
+}
+
+/* === PARAGRAPHE PROFIL === */
+.main-column .section p {
+    color: #636e72;
+    font-size: 1.05em;
+    text-align: justify;
+    line-height: 1.9;
+}
+
+/* === LISTES (colonne principale) === */
+.main-column .section ul {
+    list-style: none;
+}
+
+.main-column .section ul li {
+    margin-bottom: 25px;
+}
+
+/* === ITEMS D'EXPÉRIENCE ET FORMATION === */
+.experience-item {
+    padding: 18px 0 18px 25px;
+    border-left: 4px solid #74b9ff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.experience-item::before {
+    content: "●";
+    position: absolute;
+    left: -8px;
+    top: 18px;
+    color: #667eea;
+    font-size: 1.3em;
+}
+
+.experience-item:hover {
+    border-left-color: #667eea;
+    padding-left: 30px;
+    background-color: #f8f9fa;
+}
+
+.experience-item strong {
+    color: #2d3436;
+    font-size: 1.15em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* === SECTIONS SIDEBAR === */
+.sidebar .section {
+    margin-bottom: 35px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .section:last-child {
+    border-bottom: none;
+}
+
+/* === TITRES SECTIONS SIDEBAR === */
+.sidebar .section h2 {
+    font-size: 1.4em;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* === CONTACT ITEMS === */
+.contact-item {
+    margin-bottom: 15px;
+}
+
+.contact-item p {
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* === LISTE DE COMPÉTENCES (étiquettes côte à côte) === */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.skills-list li:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === NIVEAU LANGUE === */
+.skills-list li span {
+    display: block;
+    font-size: 0.8em;
+    margin-top: 4px;
+    opacity: 0.85;
+    font-style: italic;
+}
+
+/* === RESPONSIVE TABLETTE === */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .main-column,
+    .sidebar {
+        flex: 1 1 100%;
+    }
+    
+    body {
+        padding: 20px 15px;
+    }
+}
+
+/* === RESPONSIVE MOBILE === */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2em;
+        letter-spacing: 2px;
+    }
+    
+    .header p {
+        font-size: 1.1em;
+    }
+    
+    .main-column,
+    .sidebar {
+        padding: 30px 25px;
+    }
+    
+    .main-column .section h2 {
+        font-size: 1.5em;
+    }
+    
+    .skills-list li {
+        font-size: 0.85em;
+        padding: 8px 14px;
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>TP 6 - Description</title>
+	<link rel="stylesheet" href="projet.css" />
+</head>
+<body>
+	
+  <header>
+    <!-- Logo du site en SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img">
+        <title id="title">Logo avec un éclair</title>
+        <!-- Éclair -->
+        <polygon points="50,5 40,40 70,40 35,95 45,60 20,60" fill="yellow" stroke="orange" stroke-width="2" />
+    </svg>
+
+    <!-- Titre centré -->
+    <h1>Site de Projet - TP 6</h1>
+
+	<nav>
+        
+      <ul class="menu">
+        
+        <li><a href="index.html"><h5>Menu</h5></a></li>
+        
+        
+        <li>
+		      <p>TP 4</p>
+            <ul class="sub-menu">
+			        <li><a href="tp4.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tp4/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tp4/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tp4/exo3/ex3.html">Exercice 3</a></li>
+                <li><a href="tp4/exo4/ex4.html">Exercice 4</a></li>
+            </ul>
+        </li>
+
+        
+        <li>
+		      <p>TP 5</p>
+            <ul class="sub-menu">
+			        <li><a href="tp5.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tp5/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tp5/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tp5/exo3/ex3.html">Exercice 3</a></li>
+                <li><a href="tp5/exo4/ex4.html">Exercice 4</a></li>
+            </ul>
+        </li>
+
+        
+        <li>
+		      <p>TP Noté</p>
+            <ul class="sub-menu">
+			        <li><a href="tpnote.xhtml"><h5>Description</h5></a></li>
+                <li><a href="tpnote/exo1/ex1.html">Exercice 1</a></li>
+                <li><a href="tpnote/exo2/ex2.html">Exercice 2</a></li>
+                <li><a href="tpnote/exo3/ex3.html">Exercice 3</a></li>
+            </ul>
+        </li>
+    
+      </ul> 
+  </nav>
+  
+</header>
+    
+<br/>
+<br/>
+<div class="text-box1">
+    <h1>TP 6</h1>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Cet exercice de chronomètre m’a permis de mettre en pratique plusieurs connaissances fondamentales en intégration web, notamment la manipulation du DOM avec JavaScript, la gestion des événements sur les boutons, et l’utilisation des fonctions temporisées via `setInterval` et `clearInterval`. J’ai aussi renforcé mes compétences en liaison entre HTML, CSS et JavaScript, en structurant un projet simple mais complet avec fichiers séparés. Le niveau de difficulté m’a paru modéré car la logique du chronomètre est assez simple, mais il faut être attentif à bien gérer les états du timer pour éviter les erreurs comme le déclenchement multiple de l’intervalle. J’ai trouvé l’exercice très intéressant pour comprendre comment rendre une page interactive et dynamique, ce qui est essentiel en intégration web. Concernant le résultat, je suis satisfait : le code est clair, bien organisé, et le chronomètre fonctionne parfaitement, avec une interface propre et réactive. Cela m’encourage à approfondir davantage la programmation côté client.
+</p>
+</div>
+<br/>
+<iframe src="tp6/exo1/ex1.html" height="250" width="50"></iframe>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Cet exercice m’a permis de découvrir l’animation image par image en JavaScript, ce qui est très intéressant pour créer des effets visuels simples sans utiliser de librairies complexes ou d’animations CSS avancées. J’ai appris à manipuler dynamiquement l’attribut `src` d’une balise image pour faire défiler plusieurs images de manière cyclique, ce qui simule le mouvement d’un chat qui court. Le concept de modulo pour revenir à la première image après la dernière est également une notion importante en programmation que j’ai pu appliquer ici. Le niveau de difficulté était accessible, mais il faut bien comprendre le fonctionnement de la temporisation avec `setInterval` pour contrôler la vitesse de l’animation. Cet exercice est très utile pour mon apprentissage car il lie le JavaScript à la gestion des médias et à l’interactivité, en plus d’améliorer ma compréhension des bases du DOM. Le rendu final est fluide, l’image du chat s’anime correctement et la taille est bien adaptée, ce qui donne un résultat visuel agréable et convaincant. Je trouve que c’est un bon exercice pour progresser vers des animations plus complexes.
+</p>
+</div>
+<br/>
+<iframe src="tp6/exo2/ex2.html" height="250" width="50"></iframe>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="text-box2" >
+  <p>Cet exercice m’a permis de travailler sur la création dynamique d’éléments HTML avec JavaScript, ici un tableau 8x8 généré entièrement par script. J’ai appris à manipuler le DOM en créant des lignes (`tr`) et des cellules (`td`) à la volée, ce qui est important pour générer du contenu interactif en fonction des besoins. La gestion des événements au niveau de chaque cellule avec un écouteur de clic m’a aussi permis de comprendre comment rendre des éléments HTML réactifs et modifier leur style via les classes CSS, en appliquant ou retirant la classe `selected`. Le niveau de difficulté était plutôt accessible, mais il fallait bien comprendre la gestion de la référence à la cellule sélectionnée pour éviter des sélections multiples. L’exercice est pertinent pour mon apprentissage car il combine à la fois la manipulation du DOM, la gestion des événements et le style dynamique, des notions clés en intégration web. Le rendu fonctionne parfaitement : le tableau est clair, la sélection d’une case est visible et intuitive, et l’effet visuel est fluide grâce à la transition CSS. Ce résultat me semble bien abouti pour un premier exercice de ce type (acceptez moi en parcours dev je vous en supplie) .
+</p>
+</div>
+<br/>
+<iframe src="tp6/exo3/ex3.html" height="550" width="50"></iframe>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<footer>
+    <p>&#169; R212, Hania DEKIMECHE, 2025. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

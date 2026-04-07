@@ -1,0 +1,176 @@
+<!--J'ai décidé de faire un CV classique à deux colonnes asymétriques (30%/70%) pour qu'il soit simple, efficace et visuel. 
+Tout d'abord, j'ai commencé par la structure de base du HTML en liant le fichier css.
+J'ai essayé de bien indenter mon code pour permettre de se repérer plus facilement, voir l'arborescence et les balises ouvrantes et fermantes en suivant l'indentation. Je vous ai fait l'arborescence ici : URL-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CV de Lucila Vanhalle</title>
+	<link href="cv.css" rel="stylesheet">
+</head>
+
+<!--Pour le contenu principal, je me suis dit qu'il serait judicieux de commencer par hiérarchiser et donc séparer les deux colonnes selon leur contenu respectif-->
+
+<body>
+	<main class="cv-container">
+		
+<!--A gauche, il y a toutes les infos-clés visibles d'un simple coup d'oeil-->
+
+		<div class="colonne-gauche">
+
+<!--INSERTION DE MA PHOTO DANS LE DOSSIER LOCAL-->
+
+			<img src="photo-cv.jpg" alt="Photo professionnelle de Lucila Vanhalle" class="photo-cv" height="155" width="125">
+
+<!--CONTACT SOUS FORME DE LISTE NON ORDONNEE avec des liens pour le mail et le LinkedIn cliquables-->
+
+			<section class="contact">
+				<h2>Contact</h2>
+					<ul>
+						<li>07 82 55 54 65</li>
+						<li><a href="Mailto:lucila.vanhalle@gmail.com">lucila.vanhalle@gmail.com</a></li>
+						<li><a href="https://www.linkedin.com/in/lucila-vanhalle-9571171b2/" target="_blank">LinkedIn</a></li>
+						<li>91380 CHILLY-MAZARIN</li>
+					</ul>
+			</section>
+
+<!--COMPETENCES SOUS FORME DE LISTE NON ORDONNEE-->
+
+			<section class="competences">
+				<h2>Compétences</h2>
+					<ul>
+						<li>Analyse</li>
+						<li>Travail d'équipe</li>
+						<li>Rigueur</li>
+						<li>Empathie</li>
+						<li>Storytelling</li>
+					</ul>
+			</section>
+
+<!--DIPLOMES ET FORMATIONS SOUS FORME DE LISTE NON ORDONNEE-->
+
+			<section class="formations">
+				<h2>Formations</h2>
+					<ul>
+						<li><h3>DSP Assistant intégrateur web</h3>
+							<h4>CNAM (Paris)</h4>
+							<p>2025 - 2026</p>
+						</li>
+			
+						<li><h3>BTS Audiovisuel option Image</h3>
+							<h4>CIFACOM (Paris)</h4>
+							<p>2023 - 2024</p>
+						</li>
+			
+						<li><h3>Licence Cinéma et audiovisuel mineure Lettres</h3>
+							<h4>Université Sorbonne-Nouvelle (Paris 13)</h4>
+							<p>2020 - 2023</p>
+							<p>Mention bien</p>
+						</li>
+			
+						<li><h3>Baccalauréat Littéraire</h3>
+							<h4>Lycée Marguerite Yourcenar (Morangis)</h4>
+							<p>2019 - 2020</p>
+							<p>Mention très bien</p>
+						</li>
+					</ul>
+			</section>
+
+<!--LOISIRS SOUS FORME DE LISTE NON ORDONNEE-->
+
+			<section class="Loisirs">
+				<h2>Loisirs</h2>
+					<ul>
+						<li>Cinéma</li>
+						<li>Lecture</li>
+						<li>Jeux de société</li>
+						<li>Ecriture</li>
+					</ul>
+			</section>
+
+<!--LANGUES SOUS FORME DE LISTE NON ORDONNEE-->
+
+			<section class="Langues">
+				<h2>Langues</h2>
+					<ul>
+						<li>Français : maternelle</li>
+						<li>Anglais : C1</li>
+						<li>Espagnol : B2</li>
+						<li>Mandarin : quelques notions</li>
+					</ul>
+			</section>
+		</div>
+
+<!--La colonne de droite est celle où les informations sont plus longues et détaillées donc cela doit prendre plus de place que celle de gauche-->
+	
+		<div class="colonne-droite">
+			<header>
+				<h1>Lucila Vanhalle</h1>
+				<h2>Etudiante en DSP Assistant intégrateur web</h2>
+			</header>
+	
+<!--A PROPOS DE MOI SOUS FORME DE PARAGRAPHE-->
+
+<!--J'ai décidé de mettre en emphase les mots-clés que je trouvais importants dans ma description, ceux qui ont un lien direct avec ce que je veux faire plus tard et donc ma phase de reconversion pour y parvenir-->
+
+			<section class="A-propos-de-moi">
+				<h2>A propos de moi</h2>
+				<p>Future professionnelle en <strong>UX Design et Research</strong>, en cours de formation DSP Assistant Intégrateur Web au CNAM. Mon parcours initial en Cinéma et audiovisuel m'a dotée d'une grande sensibilité à la narration, à l'émotion utilisateur et à la composition visuelle. Je suis en <strong>reconversion</strong> pour allier cette expertise humaine à la rigueur de la conception d'interfaces. Analytique, consciencieuse et focalisée sur le besoin utilisateur, je cherche à mettre ma maîtrise des bases de l'intégration (HTML/CSS) et des outils de prototypage (Figma) au service de projets qui font la différence.</p>
+			</section>
+
+<!--EXPERIENCES PROFESSIONNELLES SOUS FORME DE LISTE NON ORDONNEE-->
+
+<!--1 élément li = 1 expérience-->
+
+			<section class="experiences-pro">
+				<h2>Expériences professionnelles</h2>
+					<ul>
+						<li><h3>Opératrice de tri</h3>
+							<h4>Ammareal (Morangis) - CDI</h4>
+							<p>Décembre 2024 - Août 2025</p>
+							<p>Opératrice de tri chez Ammareal, entreprise engagée dans l'économie circulaire du livre. En charge de l'évaluation et du tri des livres d'occasion pour leur donner une seconde vie.</p>
+						</li>
+						<li><h3>Hôtesse de caisse</h3>
+							<h4>Intersport (Paris) - CDD</h4>
+							<p>Juin 2024 - Août 2024</p>
+							<p>Hôtesse de caisse au sein du magasin Intersport Les Halles à Paris, assurant un service client de qualité et une gestion efficace des opérations de caisse.</p>
+
+<!--Ici, j'ai fait exprès de mettre une sous-liste de bulletpoints pour lister les responsabilités du poste afin que ce soit plus lisible-->
+
+							<p>Principales responsabilités :</p>
+								<ul>
+									<li>Accueil, orientation et conseil personnalisé auprès de la clientèle</li>
+									<li>Gestion efficace des encaissements selon les procédures établies</li>
+									<li>Traitement des retours produits et résolution des demandes clients</li>
+									<li>Promotion active des services additionnels (paiement échelonné, carte cadeau, programme fidélité)</li>
+									<li>Gestion des commandes Click and Collect</li>
+									<li>Optimisation de la fluidité du passage en caisse</li>
+									<li>Contribution au maintien d'une image positive de l'enseigne</li>
+								</ul>
+						</li>
+						<li><h3>Vendeuse polyvalente</h3>
+							<h4>UNIQLO (Paris) - CDD</h4>
+							<p>Octobre 2022 - Janvier 2023</p>
+							<p>Vendeuse polyvalente au sein du magasin UNIQLO Montparnasse à Paris, assurant un service client international et une gestion polyvalente des opérations en magasin.
+
+<!--Idem pour ici-->
+
+							<p>Principales responsabilités :</p>
+								<ul>
+									<li>Accueil et conseil personnalisé auprès d'une clientèle internationale</li>
+									<li>Gestion des caisses automatiques et opérations de paiement</li>
+									<li>Organisation et maintien des standards visuels du magasin</li>
+									<li>Mise en rayon et gestion des stocks en continu</li>
+									<li>Gestion efficace des cabines d'essayage</li>
+									<li>Participation active à la propreté et à l'organisation du magasin</li>
+									<li>Application des standards de présentation UNIQLO</li>
+								</ul>
+						</li>
+					</ul>
+			</section>
+		</div>
+	</main>
+</body>
+</html>

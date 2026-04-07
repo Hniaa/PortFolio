@@ -1,0 +1,36 @@
+body {
+    background-image: url("cadre.png");
+    background-size : 100%;
+    background-repeat : no-repeat;
+}
+
+h1,p {
+    text-align: center;
+}
+
+p#Fable{
+    text-align: right;
+    margin-left: 40%;
+
+}
+img{
+    position : absolute;
+    width: 15em;
+    height: 15em;
+}
+
+div {
+    margin-left: 31%;
+    margin-right: 33.1%;
+    margin-top: 14.5%;
+    margin-bottom: 24%;
+}
+
+p#Fable::first-letter{
+    color: red;
+    font-size: 130%;
+  }
+  
+p#lien{
+    margin-top: 40%;
+}
